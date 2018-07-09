@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+
+
   get 'users/show'
 
   devise_for :users
   get 'welcome/index'
 
   get 'welcome/about'
+
+  resources :users do
+    resources :items, only: [:index, :show, :create]
+  end
 
   root 'welcome#index'
 

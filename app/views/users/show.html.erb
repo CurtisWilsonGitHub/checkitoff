@@ -5,3 +5,12 @@
 <h2>
  Email: <%= @user.email %>
 </h2>
+
+<div class="col-md-8">
+  <%= render partial:'items/form', locals: {user: @user, item: @item} %>
+</div>
+
+
+<div class="col-md-8">
+  <%= render partial:'items/item', locals:{user: @user, items: @items} %>
+</div>
