@@ -1,7 +1,12 @@
-<h1>
-  User: <%= @user.name %>
-</h1>
 
-<h2>
- Email: <%= @user.email %>
-</h2>
+<% if current_user == @user %>
+  <h1>
+    User: <%= @user.name %>
+  </h1>
+
+  <h2>
+   Email: <%= @user.email %>
+  </h2>
+<% else %>
+  <h1>Oops! You've reached an invalid page, please go back!</h1>
+<% end %>
