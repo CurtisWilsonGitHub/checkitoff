@@ -1,16 +1,15 @@
-<h1>
-  User: <%= @user.name %>
-</h1>
 
-<h2>
- Email: <%= @user.email %>
-</h2>
+<% if current_user == @user %>
+  <h2>
+   Email: <%= @user.email %>
+  </h2>
 
-<div class="col-md-8">
-  <%= render partial:'items/form', locals: {user: @user, item: @item} %>
-</div>
+  <div class="col-md-8">
+    <%= render partial:'items/form', locals: {user: @user, item: @item} %>
+  </div>
 
 
-<div class="col-md-8">
-  <%= render partial:'items/item', locals:{user: @user, items: @items} %>
-</div>
+  <div class="col-md-8">
+    <%= render partial:'items/item', locals:{user: @user, items: @items} %>
+  </div>
+<% end %>
