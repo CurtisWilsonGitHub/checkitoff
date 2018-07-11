@@ -1,13 +1,13 @@
 <h1>
-  User: <%= @user.name %>
+  User: <%= current_user.name %>
 </h1>
 
 <h2>
- Email: <%= @user.email %>
+ Email: <%= current_user.email %>
 </h2>
 
 <div class="col-md-8">
-  <%= render partial:'items/form', locals: {user: @user, item: @item} %>
+  <%= render partial:'items/form', locals: {user: current_user, item: @item} %>
 </div>
 
 
