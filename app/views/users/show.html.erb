@@ -1,16 +1,22 @@
 <h1>
-  User: <%= current_user.name %>
+  User: <%= @user.name %>
 </h1>
 
 <h2>
- Email: <%= current_user.email %>
+ Email: <%= @user.email %>
 </h2>
 
 <div class="col-md-8">
-  <%= render partial:'items/form', locals: {user: current_user, item: @item} %>
+  <%= render partial:'items/form', locals: {user: @user, item: @item} %>
 </div>
 
 
 <div class="col-md-8">
-  <%= render partial:'items/item', locals:{user: @user, items: @items} %>
+  <h2> <%= current_user.name %> To Do Items </h3>
+  <div class = "row">
+    <div id="items" class = "col-md-12">
+      <%= render @items %>
+    </div>
+  </div>
+
 </div>

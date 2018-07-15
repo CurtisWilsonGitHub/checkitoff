@@ -9,10 +9,9 @@ class ItemsController < ApplicationController
     @item.user = current_user
 
     if @item.save
-      redirect_to current_user, notice: "Item was saved succesfully."
+      flash.now[:notice] = "\"#{@item.name}\" was saved succesfully."
     else
       flash.now[:alert] = "Error creating item."
-      render :new
     end
   end
 
@@ -20,11 +19,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     if @item.destroy
-      flash[:notice] = "\"#{@item.name}\" was completed. Good job!"
-      redirect_to user_path
+      flash.now[:notice] = "\"#{@item.name}\" was completed. Good job!"
     else
       flash.now[:alert] = "There was an error deleting the item"
-      redirect_to :show
     end
   end
 
