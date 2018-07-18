@@ -1,6 +1,6 @@
 
 <h1> Add a new Item </h1>
-<%= form_for [user, item] do |f| %>
+<%= form_for [user, item], remote: true do |f| %>
     <%= form_group_tag(item.errors[:name]) do %>
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control', placeholder: "Enter item title" %>

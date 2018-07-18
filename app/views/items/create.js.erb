@@ -1,0 +1,6 @@
+<% if flash[:notice] %>
+  $('#items').append('<%= j render partial: "items/item", locals: {item: @item} %>');
+  $('#item_name').val('');
+<% end %>
+
+$('#flash-messages').html('<%= j render partial: "shared/flash", flash: flash %>');

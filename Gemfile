@@ -51,3 +51,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'figaro', '1.0'
 
 gem 'devise'
+
+gem 'faker'
+
+gem "font-awesome-rails"
