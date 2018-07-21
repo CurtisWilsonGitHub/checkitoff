@@ -1,31 +1,31 @@
+<h1>
+  User: <%= @user.name %>
+</h1>
 
-<% if current_user == @user %>
-  <h1>
-    User: <%= current_user.name %>
-  </h1>
-
-  <h2>
-   Email: <%= current_user.email %>
-  </h2>
-
-<<<<<<< HEAD
-<% else %>
-  <h1>Oops! You've reached an invalid page, please go back!</h1>
-<% end %>
-||||||| merged common ancestors
+<h2>
+ Email: <%= @user.email %>
+</h2>
 
 <div class="col-md-8">
-  <%= render partial:'items/item', locals:{user: @user, items: @items} %>
+  <%= render partial:'items/form', locals: {user: @user, item: @item} %>
 </div>
-=======
+
 
 <div class="col-md-8">
-  <h2> <%= current_user.name %> To Do Items </h3>
+  <h2> <%= current_user.name %> todos </h3>
   <div class = "row">
-    <div id="items" class = "col-md-12">
-      <%= render @items %>
+    <div  class = "col-md-12">
+      <table id="items" class="table">
+        <thead>
+          <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Days left</th>
+            <th scope="col">Complete</th>
+          </tr>
+          <%= render @items %>
+        </thead>
+      </table>
+
     </div>
   </div>
-
 </div>
->>>>>>> Delete_expired_items

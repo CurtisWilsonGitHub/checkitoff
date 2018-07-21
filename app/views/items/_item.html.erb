@@ -1,9 +1,5 @@
-<div id="item-<%= item.id %>" class="media">
-  <div class="media-body">
-      <h4 class="media-heading">
-          <%= item.name %>
-          <%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %>
-          <%= link_to "", user_item_path(current_user, item.id), method: :delete, remote: true, class: 'fa fa-check' %>
-      </h4>
-  </div>
-</div>
+<tr id="item-<%= item.id %>">
+  <th scope="row"><%= item.name %></th>
+  <td><%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %></td>
+  <td><%= link_to "", user_item_path(current_user, item.id), method: :delete, remote: true, class: 'fa fa-check' %></td>
+</tr>
